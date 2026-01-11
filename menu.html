@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UtF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu – Bloom Café</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="cart-box">
+    Cart: <span id="cart-count">0</span> items |
+    Total: Rs.<span id="cart-total">0</span>
+   </div>
+
+<div class="checkout-box">
+    <button onclick="checkout()">Checkout</button>
+</div>
+
+<!-- MAIN MENU SECTION -->
+<section class="section">
+<h2>Our Menu</h2>
+<p>Handcrafted drinks & freshly made bites</p>
+
+<div class="menu-grid">
+
+<!-- COFFEE -->
+<div class="card">
+<img src="images/icedlatter.jpg.jpg">
+<h3>Classic Latte</h3>
+<p>₹220</p>
+<button class="add-cart" onclick="addToCart('Classic Latte',220)">
+    Add to Cart
+    </button>
+    
+</div>
+
+<div class="card">
+<img src="images/icedcof.jpg.jpg">
+<h3>Iced Coffee</h3>
+<p>₹200</p>
+<button class="add-cart" onclick="addToCart('Iced Coffee',200)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/capucinno.jpg.jpg">
+<h3>Cappuccino</h3>
+<p>₹210</p>
+<button class="add-cart" onclick="addToCart('Cappuccino',210)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/mocha.jpg.jpg">
+<h3>Mocha</h3>
+<p>₹240</p>
+<button class="add-cart" onclick="addToCart('Mocha',240)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/americano.jpg.jpg">
+<h3>Americano</h3>
+<p>₹190</p>
+<button class="add-cart" onclick="addToCart('Americano',190)">
+    Add to Cart
+    </button>    
+</div>
+
+<!-- SANDWICHES -->
+<div class="card">
+<img src="images/grilled.jpg.jpg">
+<h3>Grilled Cheese Sandwich</h3>
+<p>₹180</p>
+<button class="add-cart" onclick="addToCart('Grilled Cheese Sandwich',180)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/veg.jpg.jpg">
+<h3>Veg Club Sandwich</h3>
+<p>₹220</p>
+<button class="add-cart" onclick="addToCart('Veg Club Sandwich',220)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/paneer.jpg.jpg">
+<h3>Paneer Sandwich</h3>
+<p>₹240</p>
+<button class="add-cart" onclick="addToCart('Paneer Sandwich',240)">
+    Add to Cart
+    </button>    
+</div>
+
+<!-- BAKED ITEMS -->
+<div class="card">
+<img src="images/butter.jpg.jpg">
+<h3>Butter Croissant</h3>
+<p>₹160</p>
+<button class="add-cart" onclick="addToCart('Butter Croissant',160)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/choco.jpg.jpg">
+<h3>Chocolate Croissant</h3>
+<p>₹180</p>
+<button class="add-cart" onclick="addToCart('Chocolate Croissant',180)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/cheesecake.jpg.jpg">
+<h3>Cheesecake Slice</h3>
+<p>₹260</p>
+<button class="add-cart" onclick="addToCart('Cheesecake Slice',260)">
+    Add to Cart
+    </button>    
+</div>
+
+<div class="card">
+<img src="images/brownie.jpg.jpg">
+<h3>Chocolate Brownie</h3>
+<p>₹200</p>
+<button class="add-cart" onclick="addToCart('Chocolate Brownie',200)">
+    Add to Cart
+    </button>    
+</div>
+
+</div>
+</section>
+
+<!-- OUR FAVOURITES (UNCHANGED STYLE) -->
+<section class="section">
+<h2>Our Favourites</h2>
+
+<div class="menu-grid">
+
+<div class="card">
+<img src="images/latte.jpg.jpeg">
+<h3>House Latte</h3>
+<p>Customer favourite</p>
+</div>
+
+<div class="card">
+<img src="images/croissant.jpg.jpeg">
+<h3>Chocolate Croissant</h3>
+<p>Freshly baked</p>
+</div>
+
+<div class="card">
+<img src="images/icedcoffee.jpg.jpeg">
+<h3>Iced Coffee</h3>
+<p>Most loved drink</p>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Bloom Café</p>
+</footer>
+
+<script>
+    let cartCount = 0;
+    let cartTotal = 0;
+    
+    function addToCart(itemName, price) {
+    cartCount++;
+    cartTotal += price;
+    
+    document.getElementById("cart-count").innerText = cartCount;
+    document.getElementById("cart-total").innerText = cartTotal;
+    }
+    
+    function checkout() {
+    if (cartCount === 0) {
+    alert("Your cart is empty!");
+    return;
+    }
+    
+    // store values temporarily
+    localStorage.setItem("items", cartCount);
+    localStorage.setItem("total", cartTotal);
+    
+    // go to order summary page
+    window.location.href = "order.html";
+    }
+    </script>
+    
+    
+
+</body>
+</html>
