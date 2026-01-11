@@ -38,7 +38,7 @@
     .hero {
     background:
     linear-gradient(rgba(245, 235, 228, 0.75), rgba(245, 235, 228, 0.75)),
-    url("images/cafe-bg.jpg.jpeg");
+    url("cafe-bg.jpg.jpeg");
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -187,4 +187,5 @@
                 
                 .checkout-box button:hover {
                 background: #3e2a2a;
+
                 }
