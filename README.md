@@ -3,6 +3,8 @@
 A cozy café website built using HTML, CSS, and JavaScript with a warm pastel aesthetic.
 This project focuses on UI/UX design and basic frontend interactivity.
 
+[View the live experience] https://nuprr.github.io/Bloom-cafe/
+
 Features
 - Cozy winter-vibe design with pastel colors
 - Responsive layout (mobile & desktop friendly)
